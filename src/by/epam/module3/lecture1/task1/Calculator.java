@@ -14,12 +14,12 @@ public class Calculator {
         Scanner scannerObject = new Scanner(System.in);
 
         System.out.println("This is the simple calculator.");
-        System.out.println("You can culculate two values using '+', '-', '*', '/', '^' opetators.");
+        System.out.println("You can calculate two values using '+', '-', '*', '/', '^' operators.");
         System.out.print("Please, add the first value n1: ");
         try {
             n1 = scannerObject.nextDouble();
         }catch (InputMismatchException e){
-            System.out.println("The programm will closed due " + e);
+            System.out.println("The program will closed due " + e);
             System.exit(1);
         }
 
@@ -30,50 +30,49 @@ public class Calculator {
         try {
             n2 = scannerObject.nextDouble();
         }catch (InputMismatchException e){
-            System.out.println("The programm will closed due " + e);
+            System.out.println("The program will closed due " + e);
             System.exit(1);
         }
 
         switch (operation)  {
             case "+":
-                summ(n1, n2);
+                System.out.println("The result of " + n1 + " and " + n2 + " addition is " + getSum(n1, n2));
                 break;
             case "-":
-                diff(n1, n2);
+                System.out.println("The result of " + n1 + " and " + n2 + " subtracting is " +getDiff(n1, n2));
                 break;
             case "/":
-                div(n1, n2);
+                System.out.println("The result of " + n1 + " and " + n2 + " division is " + getDiv(n1, n2));
                 break;
             case "*":
-                multp(n1, n2);
+                System.out.println("The result of " + n1 + " and " + n2 + "multiplication is " +getMultiply(n1,n2));
                 break;
             case "^":
-                invol(n1, n2);
+                System.out.println("The result of a " + n1 + " raised to the " + n2 + " power is  " + getInvolving(n1,n2));
                 break;
             default:
                 System.out.println("The " + operation + " operation is not supported in this calculator.");
-
         }
     }
 
-    public static void summ(double n1, double n2){
-        System.out.println("The result of " + n1 + " and " + n2 + " adding is " +(n1+n2));
+    public static double getSum(double n1, double n2){
+        return n1+n2;
     }
 
-    public static void diff(double n1, double n2){
-        System.out.println("The result of " + n1 + " and " + n2 + " subtracting is " +(n1-n2));
+    public static double getDiff(double n1, double n2){
+        return n1-n2;
     }
 
-    public static void div(double n1, double n2){
-        System.out.println("The result of " + n1 + " and " + n2 + " division is " +(n1/n2));
+    public static double getDiv(double n1, double n2){
+        return n1/n2;
     }
 
-    public static void multp(double n1, double n2){
-        System.out.println("The result of " + n1 + " and " + n2 + " multiplying is " +(n1*n2));
+    public static double getMultiply(double n1, double n2){
+        return n1*n2;
     }
 
-    public static void invol(double n1, double n2){
-        System.out.println("The result of a " + n1 + " raised to the " + n2 + " power is  " + Math.pow(n1, n2));
+    public static double getInvolving(double n1, double n2){
+        return Math.pow(n1, n2);
     }
 
 }
