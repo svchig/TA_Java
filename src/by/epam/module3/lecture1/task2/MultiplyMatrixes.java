@@ -12,7 +12,6 @@ public class MultiplyMatrixes {
 
     public static void main(String[] args){
         String choice;
-
         int[] matrixSize;
 
         System.out.println("This program multiplies two matrices.");
@@ -30,7 +29,7 @@ public class MultiplyMatrixes {
 
         int[][] matrix1 = new int[matrixSize[0]][matrixSize[1]];
         int[][] matrix2 = new int[matrixSize[1]][matrixSize[2]];
-        int[][] matrixres = new int[matrixSize[0]][matrixSize[2]];
+        int[][] matrixRes = new int[matrixSize[0]][matrixSize[2]];
 
         System.out.println("If you prefer to use random data in matrices, please, select 1. \nIf you prefer add your data, please, select any other key");
         choice = scannerObject.nextLine();
@@ -57,11 +56,11 @@ public class MultiplyMatrixes {
         showMatrix(matrix2);
 
         //Multiply matrices
-        matrixres = multiplyMatrices(matrix1, matrix2, matrixres);
+        matrixRes = multiplyMatrices(matrix1, matrix2, matrixRes);
 
         //Show multiply results
         System.out.println("The result of multiply.");
-        showMatrix(matrixres);
+        showMatrix(matrixRes);
     }
 
     static int[] getRandomSize() {
@@ -87,16 +86,16 @@ public class MultiplyMatrixes {
     }
 
     static int[][] getRandomMatrix(int[][] matrix) {
-        int minparam, maxparam;
+        int minParam, maxParam;
         System.out.println("Could you add please the minimum amd maximum range of data");
         System.out.println("The minimum range of data is ");
-        minparam = scannerObject.nextInt();
+        minParam = scannerObject.nextInt();
         System.out.println("The maximum range of data is ");
-        maxparam = scannerObject.nextInt();
+        maxParam = scannerObject.nextInt();
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                matrix[i][j] = randomGenerator.nextInt(maxparam + 1 - minparam) + minparam;
+                matrix[i][j] = randomGenerator.nextInt(maxParam + 1 - minParam) + minParam;
             }
         }
         return matrix;
@@ -121,14 +120,14 @@ public class MultiplyMatrixes {
         }
     }
 
-    static int [][] multiplyMatrices(int[][]matrix1, int[][] matrix2, int[][] matrixres){
+    static int [][] multiplyMatrices(int[][]matrix1, int[][] matrix2, int[][] matrixRes){
         for (int i = 0; i < matrix1.length; i++) {
             for (int j = 0; j < matrix2[0].length; j++) {
                 for (int k = 0; k < matrix1[0].length; k++) {
-                    matrixres[i][j] = matrixres[i][j]+ matrix1[i][k]*matrix2[k][j];
+                    matrixRes[i][j] = matrixRes[i][j]+ matrix1[i][k]*matrix2[k][j];
                 }
             }
         }
-        return matrixres;
+        return matrixRes;
     }
 }

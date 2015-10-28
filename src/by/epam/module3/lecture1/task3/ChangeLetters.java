@@ -7,15 +7,15 @@ import java.util.Scanner;
  * Created by Siarhei_Chyhir on 10/26/2015.
  */
 public class ChangeLetters {
+    private static Scanner scannerObject = new Scanner(System.in);
+    private static Random randomGenerator = new Random();
 
     public static void main(String[] args){
         String choice;
-        Scanner scannerObject = new Scanner(System.in);
-        Random randomGenerator = new Random();
         int rowNumber;
 
         //set the number of rows
-        System.out.println("This program changes by places first and last letters in each second string of list or array.");
+        System.out.println("This program changes by places first and last letters in each second row of list or array.");
         System.out.println("If you prefer random number of rows, please, select 1. \nIf you prefer add your number of rows, please, select any other key");
         choice = scannerObject.nextLine();
         if (choice.equals("1")) {
@@ -23,7 +23,8 @@ public class ChangeLetters {
             System.out.println("The number of rows is " + rowNumber);
         } else {
             System.out.print("Please, add your number of rows: ");
-            rowNumber = scannerObject.nextInt();
+            rowNumber = Integer.parseInt(scannerObject.nextLine());
+//            scannerObject.nextLine();
         }
 
         //adding strings from console
@@ -40,7 +41,6 @@ public class ChangeLetters {
     }
 
     static String[] addingRowData(String[] arrString){
-        Scanner scannerObject = new Scanner(System.in);
         String tempString;
         for (int i = 0; i < arrString.length; i++) {
             System.out.println("Please, enter the " + i + " row");
