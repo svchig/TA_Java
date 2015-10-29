@@ -51,11 +51,11 @@ public class ChangeLetters {
     }
 
     static String[] changeFLLetterPlaces(String[] arrString){
-        if (arrString.length > 1) {
-            for (int i = 0; i < arrString.length; i++) {
-                if (i % 2 != 0) {
-                    String tempString = arrString[i];
-                    arrString[i] = tempString.substring(tempString.length() - 1) + tempString.substring(1, (tempString.length() - 1)) + tempString.substring(0, 1);
+        for (int i = 0; i < arrString.length; i++) {
+            if (i % 2 != 0) {
+                String tempString = arrString[i];
+                if (tempString.length()>1){
+                arrString[i] = tempString.substring(tempString.length() - 1) + tempString.substring(1, (tempString.length() - 1)) + tempString.substring(0, 1);
                 }
             }
         }
