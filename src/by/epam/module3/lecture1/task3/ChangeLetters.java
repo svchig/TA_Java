@@ -24,7 +24,10 @@ public class ChangeLetters {
         } else {
             System.out.print("Please, add your number of rows: ");
             rowNumber = Integer.parseInt(scannerObject.nextLine());
+                /* the second way how to fix problem with incorrect scannerObject working*/
+//            rowNumber = scannerObject.nextInt();
 //            scannerObject.nextLine();
+
         }
 
         //adding strings from console
