@@ -14,39 +14,39 @@ public class CompareCollectionsPerformanceProgram {
         System.out.println("\nLists:");
         List arrayList = new ArrayList();
         List linkedList = new LinkedList();
-        System.out.println("The result of 10000 items addition is \n" +
+        System.out.println("The result of 100000 items addition is \n" +
                 "ArrayList = " + CollectionPerformanceTest.getTimeMsOfInsert(arrayList) + " Ms\n" +
                 "LinkedList = " + CollectionPerformanceTest.getTimeMsOfInsert(linkedList) + " Ms");
-        System.out.println("The result of searching of 100000 items in 10000 items is \n" +
+        System.out.println("The result of searching of 100000 items in 100000 items is \n" +
                 "ArrayList = " + CollectionPerformanceTest.getTimeMsOfSearch(arrayList) + " Ms\n" +
                 "LinkedList = " + CollectionPerformanceTest.getTimeMsOfSearch(linkedList) + " Ms" );
-        System.out.println("The result of 10000 items removing is \n" +
+        System.out.println("The result of 100000 items removing is \n" +
                 "ArrayList = " + CollectionPerformanceTest.getTimeMsOfRemove(arrayList) + " Ms\n" +
                 "LinkedList = " + CollectionPerformanceTest.getTimeMsOfRemove(linkedList) + " Ms");
 
         System.out.println("\nSets:");
         Set hashSet = new HashSet();
         Set treeSet = new TreeSet();
-        System.out.println("The result of 10000 items addition is \n" +
+        System.out.println("The result of 100000 items addition is \n" +
                 "HashSet = " + CollectionPerformanceTest.getTimeMsOfInsert(hashSet) + " Ms\n" +
                 "TreeSet = " + CollectionPerformanceTest.getTimeMsOfInsert(treeSet) + " Ms");
-        System.out.println("The result of searching of 100000 items in 10000 items is \n" +
+        System.out.println("The result of searching of 100000 items in 100000 items is \n" +
                 "HashSet = " + CollectionPerformanceTest.getTimeMsOfSearch(hashSet) + " Ms\n" +
                 "TreeSet = " + CollectionPerformanceTest.getTimeMsOfSearch(treeSet) + " Ms" );
-        System.out.println("The result of 10000 items removing is \n" +
+        System.out.println("The result of 100000 items removing is \n" +
                 "HashSet = " + CollectionPerformanceTest.getTimeMsOfRemove(hashSet) + " Ms\n" +
                 "TreeSet = " + CollectionPerformanceTest.getTimeMsOfRemove(treeSet) + " Ms");
 
         System.out.println("\nMaps:");
         Map hashMap = new HashMap();
         Map treeMap = new TreeMap();
-        System.out.println("The result of 10000 items addition is \n" +
+        System.out.println("The result of 100000 items addition is \n" +
                 "HashMap = " + MapPerformanceTest.getTimeMsOfInsert(hashMap) + " Ms\n" +
                 "TreeMap = " + MapPerformanceTest.getTimeMsOfInsert(treeMap) + " Ms");
-        System.out.println("The result of searching of 100000 items in 10000 items is \n" +
+        System.out.println("The result of searching of 100000 items in 100000 items is \n" +
                 "HashMap = " + MapPerformanceTest.getTimeMsOfSearch(hashMap) + " Ms\n" +
                 "TreeMap = " + MapPerformanceTest.getTimeMsOfSearch(treeMap) + " Ms" );
-        System.out.println("The result of 10000 items removing is \n" +
+        System.out.println("The result of 100000 items removing is \n" +
                 "HashMap = " + MapPerformanceTest.getTimeMsOfRemove(hashMap) + " Ms\n" +
                 "TreeMap = " + MapPerformanceTest.getTimeMsOfRemove(treeMap) + " Ms");
     }

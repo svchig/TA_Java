@@ -1,16 +1,17 @@
 package by.epam.module3.lecture2.task1;
 
-import java.util.Comparator;
 /**
  * Created by Siarhei_Chyhir on 11/5/2015.
  */
 public class Candy {
     private String name;
     private int weight;
+    private String type;
 
-    protected Candy(String name, int weight){
+    protected Candy(String name, int weight, String type){
         this.name = name;
         this.weight = weight;
+        this.type = type;
     }
 
     public String getName(){
@@ -29,34 +30,15 @@ public class Candy {
         this.weight = weight;
     }
 
-    public static Comparator<Candy> GiftNameComparator = new Comparator<Candy>() {
-        public int compare(Candy s1, Candy s2) {
-            String CandyName1 = s1.getName().toUpperCase();
-            String CandyName2 = s2.getName().toUpperCase();
+    public String getType(){
+        return type;
+    }
 
-            //ascending order
-            return CandyName1.compareTo(CandyName2);
+    public void setType(String type){
+        this.type = type;
+    }
 
-            //descending order
-            //return CandyName2.compareTo(CandyName1);
-        }
-    };
-
-    public static Comparator<Candy> GiftWeightComparator = new Comparator<Candy>() {
-
-        public int compare(Candy s1, Candy s2) {
-
-            int weight1 = s1.getWeight();
-            int weight2 = s2.getWeight();
-
-	   /*For ascending order*/
-            return weight1-weight2;
-
-	   /*For descending order*/
-            //return weight2-weight1;
-        }};
-
-        public String toString(){
-        return "[ name=" + name + ", weight=" + weight + "]";
+    public String toString(){
+        return "[name=" + name + ", weight=" + weight + ", type=" + type + "]";
     }
 }

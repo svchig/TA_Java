@@ -10,7 +10,7 @@ public class MapPerformanceTest {
 
     private static void insert(Map map)
     {
-        for (int i=0;i<10000;i++){
+        for (int i=0;i<100000;i++){
             map.put(i, i);
         }
     }
