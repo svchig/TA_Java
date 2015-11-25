@@ -14,8 +14,8 @@ import java.util.List;
 public class Solution {
     public static void main (String... aArguments) throws IOException {
 
-        File sourceFile = new File("C:\\Temp\\blah.txt");
-        File destFile = new File("C:\\Temp\\blah1.txt");
+        File sourceFile = new File("Temp/blah.txt");
+        File destFile = new File("Temp/blah1.txt");
         if (!destFile.exists()){
             destFile.createNewFile();
         }
