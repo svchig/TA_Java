@@ -1,7 +1,10 @@
 package by.epam.module3.lecture3.task1;
 
 
-import by.epam.module3.lecture3.wirkingWithFile.ReadWriteTextFile;
+import by.epam.module3.lecture3.CustomExceptions.FileTypeException;
+import by.epam.module3.lecture3.CustomExceptions.InvalidCandyTypeException;
+import by.epam.module3.lecture3.CustomExceptions.InvalidWeightException;
+import by.epam.module3.lecture3.wirkingWithFile.IOTextFile;
 import by.epam.module3.lecture3.wirkingWithFile.SearchBoxParser;
 
 import java.io.File;
@@ -12,14 +15,14 @@ import java.util.List;
  * Created by Siarhei_Chyhir on 11/4/2015.
  */
 public class Solution {
-    public static void main (String... aArguments) throws IOException {
+    public static void main (String... aArguments) throws InvalidWeightException, InvalidCandyTypeException, FileTypeException, IOException {
 
         File sourceFile = new File("Temp/blah.txt");
         File destFile = new File("Temp/blah1.txt");
         if (!destFile.exists()){
             destFile.createNewFile();
         }
-        String textData = ReadWriteTextFile.getContents(sourceFile);
+        String textData = IOTextFile.getContents(sourceFile);
         SearchBoxParser parser = new SearchBoxParser(textData);
         List<String> tokens = parser.parseSearchText("\r\n");
         NYGift nyGift = new NYGift();
@@ -36,24 +39,14 @@ public class Solution {
             }
         }
 
-        ReadWriteTextFile.setContents(destFile, "The weight of the 1st gift is " + nyGift.getPackWeight() + " g.\n", false);
-        ReadWriteTextFile.setContents(destFile, "The 1st gift contains from\n", true);
-        ReadWriteTextFile.setContents(destFile, String.valueOf(nyGift.candy1)+ "\n", true);
-        ReadWriteTextFile.setContents(destFile, String.valueOf(nyGift.findCandy("Ideal"))+ "\n", true);
-        ReadWriteTextFile.setContents(destFile, String.valueOf(nyGift.findCandy("Ideal", 100))+ "\n", true);
-        ReadWriteTextFile.setContents(destFile, String.valueOf(nyGift.findCandy("Ideal", "Chocolate")), true);
+        IOTextFile.setContents(destFile, "The weight of the 1st gift is " + nyGift.getPackWeight() + " g.\n", false);
+        IOTextFile.setContents(destFile, "The 1st gift contains from\n", true);
+        IOTextFile.setContents(destFile, String.valueOf(nyGift.candy1) + "\n", true);
+        IOTextFile.setContents(destFile, String.valueOf(nyGift.findCandy("Ideal"))+ "\n", true);
+        IOTextFile.setContents(destFile, String.valueOf(nyGift.findCandy("Ideal", 100))+ "\n", true);
+        IOTextFile.setContents(destFile, String.valueOf(nyGift.findCandy("Ideal", "Chocolate")), true);
 
-        System.out.println(ReadWriteTextFile.getContents(destFile));
-
-//        System.out.println("The weight of the 1st gift is " + nyGift.getPackWeight() + " g.");
-//        System.out.println("The 1st gift contains from");
-//        nyGift.toShowCandy();
-//        System.out.println("The 1st gift sorting by weight:");
-//        nyGift.sortByWeight();
-//        System.out.println(nyGift.candy1);
-//        System.out.println(nyGift.findCandy("Ideal"));
-//        System.out.println(nyGift.findCandy("Ideal", 100));
-//        System.out.println(nyGift.findCandy("Ideal", "Chocolate"));
+        System.out.println(IOTextFile.getContents(destFile));
 
     }
 

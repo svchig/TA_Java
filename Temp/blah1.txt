@@ -1,6 +1,6 @@
 The weight of the 1st gift is 770 g.
 The 1st gift contains from
-[[name=Shottogen, weight=200, type=Chocolate], [name=Ideal, weight=100, type=Chocolate], [name=Korovka, weight=25, type=Caramel], [name=Shottogen, weight=200, type=Chocolate], [name=Korovka, weight=25, type=Caramel], [name=Kuznechik, weight=20, type=Caramel], [name=Shottogen, weight=200, type=Candy]]
-The candy with Ideal name is [name=Ideal, weight=100, type=Chocolate]
-The candy with Ideal name and 100 weight is [name=Ideal, weight=100, type=Chocolate]
-The candy with Ideal name and Chocolate type is [name=Ideal, weight=100, type=Chocolate]
+[[name=Shottogen, weight=200, type=Chocolate], [name=Ideal, weight=100, type=Chocolate1], [name=Korovka, weight=25, type=Caramel], [name=Shottogen, weight=200, type=Chocolat1e], [name=Korovka, weight=25, type=Caramel], [name=Kuznechik, weight=20, type=Caramel], [name=Shottogen, weight=200, type=Candy]]
+The candy with Ideal name is [name=Ideal, weight=100, type=Chocolate1]
+The candy with Ideal name and 100 weight is [name=Ideal, weight=100, type=Chocolate1]
+The candy with Ideal name and Chocolate type is not found.

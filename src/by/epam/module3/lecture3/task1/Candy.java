@@ -1,5 +1,8 @@
 package by.epam.module3.lecture3.task1;
 
+import by.epam.module3.lecture3.CustomExceptions.InvalidCandyTypeException;
+import by.epam.module3.lecture3.CustomExceptions.InvalidWeightException;
+
 /**
  * Created by Siarhei_Chyhir on 11/5/2015.
  */
@@ -22,7 +25,9 @@ public class Candy {
         this.name = name;
     }
 
-    public int getWeight(){
+    public int getWeight() throws InvalidWeightException{
+        if (weight <= 0) throw new InvalidWeightException("The weight should be greater than 0");
+        else
         return weight;
     }
 
@@ -30,8 +35,12 @@ public class Candy {
         this.weight = weight;
     }
 
-    public String getType(){
-        return type;
+    public String getType() throws InvalidCandyTypeException{
+        if (type.equalsIgnoreCase("Chocolate")||type.equalsIgnoreCase("Caramel")||type.equalsIgnoreCase("Candy"))
+            return type;
+        else
+            throw new InvalidCandyTypeException("The candy type: "+ type+" is incorrect.");
+
     }
 
     public void setType(String type){

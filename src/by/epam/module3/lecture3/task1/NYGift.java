@@ -1,5 +1,8 @@
 package by.epam.module3.lecture3.task1;
 
+import by.epam.module3.lecture3.CustomExceptions.InvalidCandyTypeException;
+import by.epam.module3.lecture3.CustomExceptions.InvalidWeightException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,10 +14,10 @@ import java.util.List;
 public class NYGift {
     List<Candy> candy1 = new ArrayList<Candy>();
 
-    public int getPackWeight() {
+    public int getPackWeight() throws InvalidWeightException {
         int summ = 0;
         for (Candy candy : candy1) {
-            summ = summ + candy.getWeight();
+           summ = summ + candy.getWeight();
         }
         return summ;
     }
@@ -42,7 +45,7 @@ public class NYGift {
         return "The candy with " + name + " name is not found.";
     }
 
-    public Object findCandy(int weight){
+    public Object findCandy(int weight) throws InvalidWeightException {
         for (Candy candy : candy1) {
             if (candy.getWeight()==weight) {
                 return "The candy with " + weight + " weight is " + candy.toString();
@@ -51,19 +54,27 @@ public class NYGift {
         return "The candy with " + weight + " weight is not found.";
     }
 
-    public Object findCandy(String name, int weight){
+    public Object findCandy(String name, int weight) {
         for (Candy candy : candy1) {
-            if((candy.getName().compareToIgnoreCase(name)==0)&& (candy.getWeight()==weight)) {
-                return "The candy with " + name + " name and " + weight + " weight is " + candy.toString();
+            try {
+                if((candy.getName().compareToIgnoreCase(name)==0)&& (candy.getWeight()==weight)) {
+                    return "The candy with " + name + " name and " + weight + " weight is " + candy.toString();
+                }
+            } catch (InvalidWeightException e) {
+                e.printStackTrace();
             }
         }
         return "The candy with " + name + " name and " + weight + " weight is not found.";
     }
 
-    public Object findCandy(String name, String type){
+    public Object findCandy(String name, String type)  {
         for (Candy candy : candy1) {
-            if((candy.getName().compareToIgnoreCase(name)==0)&& (candy.getType().compareToIgnoreCase(type)==0)) {
-                return "The candy with " + name + " name and " + type + " type is " + candy.toString();
+            try {
+                if((candy.getName().compareToIgnoreCase(name)==0)&& (candy.getType().compareToIgnoreCase(type)==0)) {
+                    return "The candy with " + name + " name and " + type + " type is " + candy.toString();
+                }
+            } catch (InvalidCandyTypeException e) {
+                e.printStackTrace();
             }
         }
         return "The candy with " + name + " name and " + type + " type is not found.";

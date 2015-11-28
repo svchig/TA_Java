@@ -31,8 +31,6 @@ public class SearchBoxParser {
         List<String> result = new ArrayList<>();
 
         boolean returnTokens = true;
-//        String currentDelims = fWHITESPACE_AND_QUOTES;
-//        String currentDelims = "\n";
         String currentDelims = stringDelims;
         StringTokenizer parser = new StringTokenizer(
                 fSearchText, currentDelims, returnTokens
@@ -51,20 +49,13 @@ public class SearchBoxParser {
         return result;
     }
 
-    // PRIVATE
     private String fSearchText;
-//    private static final List<String> fCOMMON_WORDS = new LinkedList<>();
     private static final String fDOUBLE_QUOTE = "\"";
 
     //the parser flips between these two lists of delimiters
     private static final String fWHITESPACE_AND_QUOTES = " \n\r\t\"";
     private static final String fQUOTES_ONLY ="\"";
 
-
-    /**
-     * Use to determine if a particular word entered in the
-     * search box should be discarded from the search.
-     */
 
     private boolean textHasContent(String aText){
         return (aText != null) && (!aText.trim().equals(""));
