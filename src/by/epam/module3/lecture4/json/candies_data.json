@@ -1,0 +1,54 @@
+{
+  "candies":
+  [
+    {
+      "id": 1,
+      "name": "Shottogen",
+      "weight": 200,
+      "type": "Chocolate",
+      "custom_parameter": "Brut"
+    },
+    {
+      "id": 2,
+      "name": "",
+      "weight": 200,
+      "type": "Chocolate",
+      "custom_parameter": "Milk"
+    },
+    {
+      "id": 3,
+      "name": "Korovka",
+      "weight": 200,
+      "type": "Caramel",
+      "custom_parameter": "Jam"
+    },
+    {
+      "id": 4,
+      "name": "Shottogen",
+      "weight": 200,
+      "type": "Chocolate",
+      "custom_parameter": "Brut"
+    },
+    {
+      "id": 5,
+      "name": "Korovka",
+      "weight": 200,
+      "type": "Caramel",
+      "custom_parameter": "Jam"
+    },
+    {
+      "id": 6,
+      "name": "Kuznechik",
+      "weight": 200,
+      "type": "Caramel",
+      "custom_parameter": "Kuznechik"
+    },
+    {
+      "id": 6,
+      "name": "Shottogen",
+      "weight": 200,
+      "type": "Candy",
+      "custom_parameter": null
+    }
+  ]
+}
