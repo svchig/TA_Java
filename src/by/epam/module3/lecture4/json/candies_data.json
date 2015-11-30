@@ -10,15 +10,15 @@
     },
     {
       "id": 2,
-      "name": "",
-      "weight": 200,
+      "name": "Ideal",
+      "weight": 100,
       "type": "Chocolate",
       "custom_parameter": "Milk"
     },
     {
       "id": 3,
       "name": "Korovka",
-      "weight": 200,
+      "weight": 20,
       "type": "Caramel",
       "custom_parameter": "Jam"
     },
@@ -32,14 +32,14 @@
     {
       "id": 5,
       "name": "Korovka",
-      "weight": 200,
+      "weight": 25,
       "type": "Caramel",
       "custom_parameter": "Jam"
     },
     {
       "id": 6,
       "name": "Kuznechik",
-      "weight": 200,
+      "weight": 20,
       "type": "Caramel",
       "custom_parameter": "Kuznechik"
     },
@@ -48,7 +48,7 @@
       "name": "Shottogen",
       "weight": 200,
       "type": "Candy",
-      "custom_parameter": null
+      "custom_parameter": ""
     }
   ]
 }

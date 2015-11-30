@@ -3,6 +3,8 @@ package by.epam.module3.lecture4.json;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
@@ -10,32 +12,24 @@ import java.util.ArrayList;
  */
 public class JsonData {
 
-
-    static String file = "";
-
-    public static void main(String[] args){
+    public static ArrayList<String> getJsonDataFile(String filePath){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        ArrayList<JsonCandy> candies =  new ArrayList<>();
-        candies.add(getJsonCandy());
-        candies.add(getJsonCandy());
-        candies.add(getJsonCandy());
-        candies.add(getJsonCandy());
-        candies.add(getJsonCandy());
-        candies.add(getJsonCandy());
-        candies.add(getJsonCandy());
-        Candies candies1 = new Candies();
-        candies1.setCandies(candies);
-        System.out.println(gson.toJson(candies1));
-//        gson.
+        try {
+            ArrayList<String> dataFromJson = new ArrayList<>();
+            FileReader fileReader = new FileReader(filePath);
+            Candies candies2 = gson.fromJson(fileReader, Candies.class);
+            for (JsonCandy c: candies2.candies){
+                String name = c.getName();
+                int weight = c.getWeight();
+                String type = c.getType();
+                String custom_parameter = c.getCustom_parameter();
+                dataFromJson.add(name + " " + weight + " " + type + " " + custom_parameter);
+            }
+            return dataFromJson;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
-    private static JsonCandy getJsonCandy(){
-        JsonCandy jsonCandy = new JsonCandy();
-        jsonCandy.setId(1);
-        jsonCandy.setName("Shottogen");
-        jsonCandy.setWeight(200);
-        jsonCandy.setType("Chocolate");
-        jsonCandy.setCustom_parameter("Brut");
-        return jsonCandy;
-    }
 }
